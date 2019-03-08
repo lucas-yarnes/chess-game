@@ -19,6 +19,17 @@ public class Bishop extends ChessPiece {
 		}
 	}
 	
+	public boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard) {
+		int dirX = newX > xPos ? 1 : -1;
+		int dirY = newY > yPos ? 1 : -1;
+		for (int i = 1; i < Math.abs(newX - xPos); i++) {
+			if (ChessBoard.isPieceNotBlank(xPos + i * dirX, yPos + i * dirY)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public String toString() {
 		return "Bishop";
 	}

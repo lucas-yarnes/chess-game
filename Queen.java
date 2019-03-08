@@ -21,6 +21,38 @@ public class Queen extends ChessPiece{
 		}
 	}
 	
+	public boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard) {
+		int dirX = newX > xPos ? 1 : -1;
+		int dirY = newY > yPos ? 1 : -1;
+		
+		if (xPos != newX && yPos != newY) {
+			for (int i = 1; i < Math.abs(newX - xPos); i++) {
+				if (ChessBoard.isPieceNotBlank(xPos + i * dirX, yPos + i * dirY)) {
+					return false;
+				}
+			}
+			return true;
+		}
+		else {
+			if (xPos == newX) {
+				for (int i = 1; i < Math.abs(newY - yPos); i++) {
+					if (ChessBoard.isPieceNotBlank(newX, yPos + i * dirY)) {
+						return false;
+					}
+				}
+				return true;
+			}
+			else {
+				for (int i = 1; i < Math.abs(newX - xPos); i++) {
+					if (ChessBoard.isPieceNotBlank(xPos + i * dirX, newY)) {
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+	}
+	
 	public String toString() {
 		return "Queen";
 	}

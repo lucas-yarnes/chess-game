@@ -21,6 +21,9 @@ public class King extends ChessPiece{
 		}
 	}
 	
+	public boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard) {
+		return true;
+	}
 	
 	public String toString() {
 		return "King";

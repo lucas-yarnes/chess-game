@@ -18,6 +18,8 @@ public abstract class ChessPiece {
 	
 	abstract boolean checkForLegality(int x, int y, ChessPiece piece);
 		
+	abstract boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard);
+
 	public String getImage() {
 		if(isWhite) 
 			return wImg;
@@ -37,4 +39,5 @@ public abstract class ChessPiece {
 	public int getY() {
 		return yPos;
 	}
+
 }

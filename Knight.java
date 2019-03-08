@@ -22,6 +22,10 @@ public class Knight extends ChessPiece {
 		}
 	}
 	
+	public boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard) {
+		return true;
+	}
+	
 	public String toString() {
 		return "Knight";
 	}

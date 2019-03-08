@@ -9,6 +9,10 @@ public class Blank extends ChessPiece {
 		return false;
 	}
 	
+	public boolean checkForSkipping(int newX, int newY, ChessPiece[][] gameBoard) {
+		return false;
+	}
+	
 	public String toString() {
 		return "Blank";
 	}
